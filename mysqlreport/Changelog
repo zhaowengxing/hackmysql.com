@@ -1,6 +1,8 @@
 http://hackmysql.com/mysqlreport
-
 mysqlreport changelog
+
+数据库要设置show_compatibility_56参数为on,否则报677 line ;INFORMATION_SCHEMA.GLOBAL_VARIABLES错误
+set global show_compatibility_56=on
 
 v3.5 April 16 2008
 - Fixed bug: incorrect checking of MySQL version caused mysqlreport to
@@ -16,7 +18,7 @@ v3.5 April 16 2008
   old method of inserting values manually like: key_buffer_size=128M)
 - Slow query time is beautified for microsecond, millisecond, and second
   resolution (format_u_time):
-    0.000000 - 0.000999 = 0 - 999 �
+    0.000000 - 0.000999 = 0 - 999 µ
     0.001000 - 0.999999 = 1 ms - 999.999 ms
     1.000000 - n.nnnnnn = 1 s - n.nnnnn s
 - Added a lot more debugging output.
